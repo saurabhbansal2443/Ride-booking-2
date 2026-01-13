@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Profile from "./Screen/Profile";
 import Home from "./Screen/Home";
 import Navbar from "./Components/Navbar"; // Import the new component
+import Rides from "./Screen/Rides";
 
 const App = () => {
   const [isActiveScreen, setIsActiveScreen] = useState("Home");
@@ -20,7 +21,7 @@ const App = () => {
         )}
         {/* You can add placeholder screens for the others */}
         {isActiveScreen === "Rides" && (
-          <div className="p-20 text-white">Rides Screen</div>
+          <Rides setIsActiveScreen={setIsActiveScreen} />
         )}
         {isActiveScreen === "History" && (
           <div className="p-20 text-white">History Screen</div>

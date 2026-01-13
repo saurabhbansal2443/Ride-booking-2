@@ -5,7 +5,6 @@ const Navbar = ({ activeScreen, setIsActiveScreen }) => {
   const tabs = [
     { id: "Home", icon: <Home size={22} />, label: "Home" },
     { id: "Rides", icon: <MapPin size={22} />, label: "Rides" },
-    { id: "History", icon: <History size={22} />, label: "Activity" },
     { id: "Profile", icon: <User size={22} />, label: "Profile" },
   ];
 

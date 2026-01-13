@@ -11,6 +11,7 @@ const initialState = {
   currentTrip: {
     pickup: "",
     drop: "",
+    selectedMode: "",
   },
 };
 
@@ -25,12 +26,13 @@ export const appSlice = createSlice({
       state.walletBalance += parseFloat(action.payload);
     },
     setCurrentTrip: (state, action) => {
-      state.currentTrip = action.payload;
+      state.currentTrip = { ...state.currentTrip, ...action.payload };
     },
     resetCurrentTrip: (state) => {
       state.currentTrip = {
         pickup: "",
         drop: "",
+        selectedMode: "",
       };
     },
   },
