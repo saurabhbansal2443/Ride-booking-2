@@ -6,6 +6,7 @@ const initialState = {
     email: "saurabh@gmail.com",
     phoneNumber: "9987654321",
   },
+  walletBalance: 0,
 };
 
 export const appSlice = createSlice({
@@ -15,9 +16,12 @@ export const appSlice = createSlice({
     setUserData: (state, action) => {
       state.userData = { ...state.userData, ...action.payload };
     },
+    addWalletBalance: (state, action) => {
+      state.walletBalance += parseFloat(action.payload);
+    },
   },
 });
 
-export const { setUserData } = appSlice.actions;
+export const { setUserData, addWalletBalance } = appSlice.actions;
 
 export default appSlice.reducer;
