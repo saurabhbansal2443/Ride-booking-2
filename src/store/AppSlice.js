@@ -7,6 +7,11 @@ const initialState = {
     phoneNumber: "9987654321",
   },
   walletBalance: 0,
+  savedLocations: ["123 Downtown ,Delhi", "456, Canada,"],
+  currentTrip: {
+    pickup: "",
+    drop: "",
+  },
 };
 
 export const appSlice = createSlice({
@@ -19,9 +24,23 @@ export const appSlice = createSlice({
     addWalletBalance: (state, action) => {
       state.walletBalance += parseFloat(action.payload);
     },
+    setCurrentTrip: (state, action) => {
+      state.currentTrip = action.payload;
+    },
+    resetCurrentTrip: (state) => {
+      state.currentTrip = {
+        pickup: "",
+        drop: "",
+      };
+    },
   },
 });
 
-export const { setUserData, addWalletBalance } = appSlice.actions;
+export const {
+  setUserData,
+  addWalletBalance,
+  setCurrentTrip,
+  resetCurrentTrip,
+} = appSlice.actions;
 
 export default appSlice.reducer;
